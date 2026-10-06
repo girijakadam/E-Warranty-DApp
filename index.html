@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Warranty Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>🔐 E-Warranty</h2>
+
+        <button id="connectWallet">
+            Connect Wallet
+        </button>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+            <h1>Blockchain-Based E-Warranty Management</h1>
+
+            <p>
+                Issue, verify and transfer product warranties securely
+                using blockchain technology.
+            </p>
+
+            <p id="walletAddress">
+                Wallet not connected
+            </p>
+        </section>
+
+
+        <section class="cards">
+
+            <!-- Manufacturer -->
+            <div class="card">
+
+                <h2>🏭 Manufacturer</h2>
+
+                <p>Register a new product warranty.</p>
+
+                <input
+                    type="text"
+                    id="productId"
+                    placeholder="Product ID"
+                >
+
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Product Name"
+                >
+
+                <input
+                    type="text"
+                    id="customerAddress"
+                    placeholder="Customer Wallet Address"
+                >
+
+                <input
+                    type="number"
+                    id="warrantyPeriod"
+                    placeholder="Warranty Period (days)"
+                >
+
+                <button id="issueWarranty">
+                    Issue Warranty
+                </button>
+
+            </div>
+
+
+            <!-- Customer Verification -->
+            <div class="card">
+
+                <h2>🔍 Verify Warranty</h2>
+
+                <p>Find and verify your product warranty.</p>
+
+                <!-- Find Warranty -->
+                <input
+                    type="text"
+                    id="searchProductId"
+                    placeholder="Product ID or Serial Number"
+                >
+
+                <button id="findWarranty">
+                    Find Warranty
+                </button>
+
+                <div id="warrantyResult"></div>
+
+                <!-- Verify Warranty -->
+                <input
+                    type="text"
+                    id="verifyWarrantyId"
+                    placeholder="Warranty ID"
+                >
+
+                <button id="verifyWarranty">
+                    Verify Warranty
+                </button>
+
+            </div>
+
+
+            <!-- Transfer -->
+            <div class="card">
+
+                <h2>🔄 Transfer Warranty</h2>
+
+                <p>Transfer warranty ownership to another customer.</p>
+
+                <input
+                    type="text"
+                    id="transferWarrantyId"
+                    placeholder="Warranty ID"
+                >
+
+                <input
+                    type="text"
+                    id="newOwner"
+                    placeholder="New Owner Wallet Address"
+                >
+
+                <button id="transferWarranty">
+                    Transfer Warranty
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Ethers.js -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+
+    <!-- Smart Contract Details -->
+    <script src="contract.js"></script>
+
+    <!-- Your JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>
